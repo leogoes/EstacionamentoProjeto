@@ -1,0 +1,177 @@
+﻿@model ProjetoModeloDDD.MVC.ViewModels.EstabelecimentoViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Informações Estabelecimento</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Nome
+        </th>
+        <th>
+            CNPJ
+        </th>
+        <th>
+            Endereço
+        </th>
+        <th>
+            Telefone
+        </th>
+        <th>
+            Quantidade de Vagas para Moto
+        </th>
+        <th>
+            Quantidade de Vagas para Carro
+        </th>
+        <th></th>
+    </tr>
+
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => Model.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.CNPJ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.Endereço)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.Telefone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.QtdeVagaMoto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.QtdeVagaCarro)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+            @Html.ActionLink("Details", "Details", new { id = Model.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = Model.Id })
+        </td>
+    </tr>
+</table>
+
+<h2>Carros Estacionados</h2>
+
+@if (Model.VeiculosEstacionados.Count > 0)
+{
+
+    <table class="table">
+        <tr>
+            <th>
+                Marca
+            </th>
+            <th>
+                Modelo
+            </th>
+            <th>
+                Cor
+            </th>
+            <th>
+                Placa
+            </th>
+            <th>
+                Tipo
+            </th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model.VeiculosEstacionados)
+        {
+            <tr>
+                <td>
+                    @item.Marca
+                </td>
+                <td>
+                    @item.Modelo
+                </td>
+                <td>
+                    @item.Cor
+                </td>
+                <td>
+                    @item.Placa
+                </td>
+                <td>
+                    @item.Tipo
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", "Veiculo", new { id = item.Id }, "") |
+                    @Html.ActionLink("Details", "Details","Veiculo", new { id = item.Id }, "") |
+                    @Html.ActionLink("Delete", "Delete","Veiculo", new { id = item.Id }, "") |
+                    @Html.ActionLink("Sair Estacionamento", "SairEstacionamento", new { id = item.Id }) 
+                </td>
+            </tr>
+
+        }
+
+    </table>
+}
+else
+{
+    <label>Não há carros estacionados</label>
+}
+
+<h2>Carros não Estacionado</h2>
+
+@if (Model.VeiculosNaoEstacionados.Count > 0)
+{
+    <table class="table">
+        <tr>
+            <th>
+                Marca
+            </th>
+            <th>
+                Modelo
+            </th>
+            <th>
+                Cor
+            </th>
+            <th>
+                Placa
+            </th>
+            <th>
+                Tipo
+            </th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model.VeiculosNaoEstacionados)
+        {
+            <tr>
+                <td>
+                    @item.Marca
+                </td>
+                <td>
+                    @item.Modelo
+                </td>
+                <td>
+                    @item.Cor
+                </td>
+                <td>
+                    @item.Placa
+                </td>
+                <td>
+                    @item.Tipo
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", "Veiculo", new { id = item.Id }, "") |
+                    @Html.ActionLink("Details", "Details", "Veiculo", new { id = item.Id }, "") |
+                    @Html.ActionLink("Delete", "Delete", "Veiculo", new { id = item.Id }, "") |
+                    @Html.ActionLink("Entrar Estacionamento", "EntrarEstacionamento", new { id = item.Id })
+                </td>
+            </tr>
+
+        }
+    </table>
+
+}
+else
+{
+    <label>Não há carros estacionados</label>
+}

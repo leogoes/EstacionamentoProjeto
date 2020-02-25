@@ -1,0 +1,106 @@
+
+MovCad – Conceito de Carteira para Cartão
+
+- Somente nomenclatura?
+- O que é carteira?
+
+MovCad – Aba formulários apenas apresenta se houver informação 
+-  apresente aba Formulários ao contratante quando houver a menos um anexo parametrizado. 
+
+MovCad - Gerar relatórios na ferramenta 
+
+**TIPO CONSULTA**
+- Tipo de consulta(BENEFICIARIO ATIVO ou EXCLUIDO) é OBRIGATORIO
+- Tipo de Consulta(Beneficiario Ativo ou Excluido)
+
+**PERIODO de REFERENCIA**
+- Periodo de Referencia so aparece quando o tipo de consulta é igual a Beneficiario Excluido
+- Periodo de Referencia possui data final e data inicial
+- Periodo de Referencia aceita somente datas validas
+- Periodo de Referencia - Data Inicial nao podera ser maior que a data final
+- A data inicial nao podera retroceder mais que  3 meses em relacao a(data_atual)
+- A data final nao podera ser superior a 3 meses em relacao a (data atual)
+- Permitido retroagir no maximo 3 meses
+
+		A data inicial não poderá ser retroativa mais de 3 meses, 
+		utilizando como referência a data atual; 
+		
+		
+		A data final não poderá ser futura, mais de 3 meses, 
+		utilizando como referência a data atual;
+		
+		3 meses =>  data Inicial(data_atual) - (periodo) - data final(data_atual) <= 3 meses
+					3 -	data_atual + 3
+- Caso seja escolhido o tipo de consulta BENEFICIARIO EXCLUIDO sera obrigatorio preencher periodo pendencia
+- o resultado da pesquisa de BENEFICIARIO EXCLUIDO tera com resultado os  BENEFICIARIO com data de exclusao 
+	compreendida entre o perido de referencia.
+	
+**BENEFICIARIO COM DATA DE EXCLUSAO PROGRAMADA**
+- Obrigatorio quando o Tipo de consulta for igual a BENEFICIARIO ATIVO
+- Define se o BENEFICIARIO COM DATA DE EXCLUSAO PROGRAMADA devera ou nao ser exibidos no relatórios de ativos
+
+**COMBO CONTRATANTE**
+- ??ComboContratante? fica habilitado nas situações onde o usuario possuir acesso a mais de uma contratante?
+- Caso tenha acesso a somente uma contratante o ??Combo Contratante?? devera ficar preenchido e desabilitado.
+
+**COMBO MODALIDADE**
+- ??ComboModalidade?? filtrada de acordo com as contratntes relacionadas ao usuario 
+- ??ComboModalidade?? caso nenhuma contratante, todas as modalidades devem ser exibidas
+
+**TERMO**
+- O Filtro Termo so aparece caso alguma modalidade seja selecionada
+
+**BENEFICIARIO ATIVO**
+-  considera-se ativo todos os beneficiarios que nao possuem data de exclusao nem data de exclusao programada
+	(para aparecer necessario filtro BENEFICIARIO COM DATA DE EXCLUSAO PROGRAMADA)
+- BENEFICIARIO COM DATA DE EXCLUSAO PROGRAMADA(Default: Não) podera ser visualizado nos dois tipos de consulta, com os devidos filtros
+
+**OBRIGATORIO**
+
+BENEFICIARIO ATIVO 		=> 	BENEFICIARIO COM DATA DE EXCLUSAO PROGRAMADA
+BENEFICIARIO EXCLUIDO 	=> 	PERIODO DE REFERENCIA
+
+
+
+**BUTTONS**
+
+LIMPAR CONSULTA
+EXPORTAR
+CONSUTLAR
+
+MovCad – Habilitar Modalidade Funcesp
+- Modalidades são habilitadas
+- **NOTAS**
+
+
+MovCad - Layout 11 – TOTVS
+
+**LISTA EM LOTE**
+
+- A Contrantate enviou um arquivo em lote com a versao 11, o sistema realizara verificaocoes em relacao a versao 11 
+	e resultado na versao 11
+- Contrante envia arquivo versao 7, valida na versao 7 e recebe na versao 7 
+- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
